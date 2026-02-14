@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: #ffffff;
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Add Student</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        Name:
+        <input type="text" name="name"><br><br>
+
+        Roll No:
+        <input type="number" name="roll"><br><br>
+
+        Class:
+        <input type="text" name="class"><br><br>
+
+        Age:
+        <input type="number" name="age"><br><br>
+
+        Parent Contact:
+        <input type="text" name="contact"><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <p>{{ message }}</p>
+    <a href="/students/list/">View Students</a>
+</body>
+</html>

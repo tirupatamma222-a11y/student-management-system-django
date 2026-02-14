@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Student List</h2>
+
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Roll</th>
+<th>Class</th>
+<th>Age</th>
+<th>Contact</th>
+<th>Actions</th>
+</tr>
+
+{% for s in students %}
+<tr>
+<td>{{ s.name }}</td>
+<td>{{ s.roll_number }}</td>
+<td>{{ s.student_class }}</td>
+<td>{{ s.age }}</td>
+<td>{{ s.parent_contact }}</td>
+<td>
+<a href="/students/update/{{ s.id }}/">Edit</a> |
+<a href="/students/delete/{{ s.id }}/">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="/students/">Add New Student</a>
+
+</body>
+</html>
